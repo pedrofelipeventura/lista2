@@ -1,0 +1,34 @@
+//Escreva um programa que transforme o computador em uma urna eletrˆonica para elei ̧c ̃ao para pre-
+//sidente de um certo pa ́ıs, `as quais concorrem os candidatos 5-Paulo e 7-Renata. Cada voto deve serdado pelo n ́umero do candidato, 
+//permitindo-se ainda o voto 0 para voto em branco. Qualquer votodiferente dos j ́a citados  ́e considerado nulo; em qualquer situa ̧c ̃ao, 
+//o eleitor deve ser consultado quanto`a confirma ̧c ̃ao do seu voto. No final da elei ̧c ̃ao o programa deve emitir um relat ́orio contendo as
+//por-centagens de vota ̧c ̃ao de cada candidato, votos em branco, votos nulos e o candidato eleito. Obs.: Oc ́odigo para finalizar a urna (vota ̧c ̃ao)  
+/́/e o usu ́ario digitar algum n ́umero negativo.
+
+#include <stdio.h>
+int voto, voto_paulo, voto_renata, voto_branco;
+
+int main(){
+    printf("Digite um número para seu candidato, 5-Paulo ou 7-Renata, ou 0 para voto em branco\n");
+    printf("Para finalizar, digite um número negativo.\n");
+    while(1){
+        printf("Digite seu voto: ");
+        scanf("%d", &voto);
+    if(voto < 0){
+        printf("Votação encerrada");
+        break;
+    }
+    
+    if(voto == 0){
+        voto_branco++;
+    }else if (voto == 5){
+        voto_paulo++;
+    }else if (voto == 7){
+        voto_renata++;
+    }
+}
+    printf("Votos para Paulo: %d\n", voto_paulo);
+    printf("Votos para Renata: %d\n", voto_renata);
+    printf("Votos em branco: %d\n", voto_branco);
+return 0;
+}
