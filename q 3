@@ -1,0 +1,21 @@
+//Escreva um programa que leia um n ́umero inteiro e positivo F e calcule o fatorial deste n ́umero.
+
+#include <stdio.h>
+
+int main(){
+    int F,i, fatorial =1;
+
+    printf("Digite um numero inteiro e positivo: ");
+    scanf("%d", &F);
+
+    if(F<=0){
+        puts("Digite um numero inteiro e positivo: ");
+        return 1;
+    }
+    for(i=1;i<=F; i++){
+        fatorial *= i; 
+    }
+    printf("O fatorial de %d é %d\n", F, fatorial);
+
+    return 0;
+}
