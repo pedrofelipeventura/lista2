@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    long long soma = 0;
+
+    // Laço para calcular a soma dos grãos
+    for (int i = 0; i < 64; i++) {
+        soma += (1LL << i);  // 1LL << i equivale a 2^i (uso de long long para lidar com grandes números)
+    }
+
+    // Exibe a soma total dos grãos
+    printf("A soma total de grãos no tabuleiro de xadrez é: %lld\n", soma);
+
+    return 0;
+}
