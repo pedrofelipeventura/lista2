@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, i, contador = 0;
+
+    // Solicita ao usuário os valores de A e B
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+
+    // Verifica qual é o menor e maior valor para ajustar o laço
+    if (A > B) {
+        // Troca os valores de A e B se A for maior que B
+        int temp = A;
+        A = B;
+        B = temp;
+    }
+
+    // Conta os números divisíveis por 3 entre A e B
+    for (i = A; i <= B; i++) {
+        if (i % 3 == 0) {
+            contador++;
+        }
+    }
+
+    // Exibe o resultado
+    printf("A quantidade de números divisíveis por 3 entre %d e %d é: %d\n", A, B, contador);
+
+    return 0;
+}
