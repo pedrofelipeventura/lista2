@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    unsigned char X, Y, resultado;
+
+    // Solicitar os valores de X e Y
+    printf("Digite o valor de X (0-255): ");
+    scanf("%hhu", &X);  // Lê o valor de X como unsigned char
+
+    printf("Digite o valor de Y (deve ser maior ou igual a 5): ");
+    scanf("%hhu", &Y);  // Lê o valor de Y como unsigned char
+
+    // Verificar se Y é maior ou igual a 5
+    if (Y < 5) {
+        printf("Erro: Y deve ser maior ou igual a 5.\n");
+        return 1;
+    }
+
+    // Limpeza de bits ao redor de Y, e esconder X nos 4 bits anteriores e 4 bits posteriores
+    // Vamos criar um valor onde os bits de Y são modificados.
+    
+    // Passo 1: Limpar os 4 bits antes e 4 bits depois de Y (criar máscara de 8 bits)
+    unsigned char mascara = 0xFF;  // Máscara cheia de 1s (11111111)
+    unsigned char mascara_limpeza = ~(0xF << (Y - 4));  // Máscara para limpar os 8 bits ao redor de Y
+    
+    // Passo 2: Aplicar máscara de limpeza para apagar os bits ao redor de Y
+    resultado = (Y & mascara_limpeza);
+    
+    // Passo 3: Inserir os bits de X nos 8 bits limpos (no lugar correto)
+    resultado = (resultado | (X << (Y - 4))); 
+
+    // Mostrar o resultado final
+    printf("Resultado: 0x%02X\n", resultado);  // Exibe o valor final em hexadecimal
+
+    return 0;
+}
