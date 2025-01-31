@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, i, soma = 0;
+
+    // Solicita ao usuário os valores de A e B
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+
+    // Verifica qual é o menor e maior valor para ajustar o laço
+    if (A > B) {
+        // Troca os valores de A e B se A for maior que B
+        int temp = A;
+        A = B;
+        B = temp;
+    }
+
+    // Soma os números pares entre A e B
+    for (i = A; i <= B; i++) {
+        // Verifica se o número é par
+        if (i % 2 == 0) {
+            soma += i;
+        }
+    }
+
+    // Exibe o resultado
+    printf("A soma dos números pares entre %d e %d é: %d\n", A, B, soma);
+
+    return 0;
+}
