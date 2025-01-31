@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    printf("Quadrados dos múltiplos de 4 entre 15 e 90:\n");
+
+    // Loop de 15 até 90
+    for (i = 15; i <= 90; i++) {
+        // Verifica se o número é múltiplo de 4
+        if (i % 4 == 0) {
+            // Imprime o quadrado do número
+            printf("%d^2 = %d\n", i, i * i);
+        }
+    }
+
+    return 0;
+}
