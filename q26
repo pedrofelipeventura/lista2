@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void imprimir_binario(int num) {
+    // Função para imprimir o número em binário
+    for (int i = 15; i >= 0; i--) {
+        printf("%d", (num >> i) & 1); // Desloca o número e imprime cada bit
+    }
+}
+
+int main() {
+    printf("Decimal\tBinario\t\tOctal\t\tHexadecimal\n");
+    printf("--------------------------------------------------------\n");
+
+    // Laço para percorrer os números de 1 a 256
+    for (int i = 1; i <= 256; i++) {
+        printf("%d\t", i);
+
+        // Imprime o número em binário
+        imprimir_binario(i);
+        printf("\t");
+
+        // Imprime o número em octal
+        printf("%o\t", i);
+
+        // Imprime o número em hexadecimal
+        printf("%X\n", i);
+    }
+
+    return 0;
+}
