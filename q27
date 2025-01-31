@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int maior, menor;
+
+    printf("Digite um numero inteiro (número negativo e par encerra o programa):\n");
+
+    // Lê o primeiro número
+    scanf("%d", &numero);
+
+    // Verifica se o número é negativo e par logo no início
+    if (numero < 0 && numero % 2 == 0) {
+        printf("Programa encerrado. Nenhum número foi processado.\n");
+        return 0;
+    }
+
+    // Inicializa o maior e menor número com o primeiro valor
+    maior = menor = numero;
+
+    // Laço para ler os números
+    while (1) {
+        printf("Digite um numero inteiro: ");
+        scanf("%d", &numero);
+
+        // Condição para sair do laço: número negativo e par
+        if (numero < 0 && numero % 2 == 0) {
+            break;
+        }
+
+        // Atualiza o maior número
+        if (numero > maior) {
+            maior = numero;
+        }
+
+        // Atualiza o menor número
+        if (numero < menor) {
+            menor = numero;
+        }
+    }
+
+    // Exibe o produto do maior pelo menor número
+    printf("O produto do maior (%d) pelo menor (%d) é: %d\n", maior, menor, maior * menor);
+
+    return 0;
+}
