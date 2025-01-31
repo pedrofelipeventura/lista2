@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, soma = 0, contador = 0, i;
+    float media;
+
+    // Solicita os valores de A e B
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+
+    // Garantir que o laço percorra do menor para o maior número
+    if (A > B) {
+        // Troca os valores de A e B se A for maior que B
+        int temp = A;
+        A = B;
+        B = temp;
+    }
+
+    // Laço que percorre a faixa de A até B
+    for (i = A; i <= B; i++) {
+        soma += i;      // Adiciona o número à soma
+        contador++;     // Conta os números
+    }
+
+    // Verifica se há números no intervalo
+    if (contador > 0) {
+        // Calcula a média
+        media = (float)soma / contador;
+        printf("A média aritmética dos números entre %d e %d é: %.2f\n", A, B, media);
+    } else {
+        printf("Intervalo inválido. Não há números entre %d e %d.\n", A, B);
+    }
+
+    return 0;
+}
