@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 5;
+
+    // Demonstrando pré-incremento
+    printf("Pré-incremento: \n");
+    printf("Valor de a antes: %d\n", a);
+    printf("Resultado do pré-incremento: %d\n", ++a);  // Pré-incremento
+    printf("Valor de a depois: %d\n\n", a);
+
+    // Demonstrando pós-incremento
+    printf("Pós-incremento: \n");
+    printf("Valor de b antes: %d\n", b);
+    printf("Resultado do pós-incremento: %d\n", b++);  // Pós-incremento
+    printf("Valor de b depois: %d\n", b);
+
+    return 0;
+}
