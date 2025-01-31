@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int n; // número de termos
+    double pi = 0.0; // valor aproximado de pi
+    int i;
+
+    // Solicita ao usuário o número de termos a ser considerado
+    printf("Digite o número de termos da série para aproximar o valor de pi: ");
+    scanf("%d", &n);
+
+    printf("Aproximação do valor de pi com base nos primeiros termos:\n");
+    printf("Termos\t\tValor de pi\n");
+    
+    // Laço para calcular a aproximação de pi com os termos da série
+    for (i = 1; i <= n; i++) {
+        // Se o índice for ímpar, somamos o termo
+        if (i % 2 != 0) {
+            pi += 4.0 / (2 * i - 1);
+        } else { // Se o índice for par, subtraímos o termo
+            pi -= 4.0 / (2 * i - 1);
+        }
+
+        // Exibe a tabela com o valor de pi após cada termo
+        printf("%d\t\t%.15lf\n", i, pi);
+    }
+
+    return 0;
+}
