@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int numero, contador = 0;
+
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    // Enquanto o número for maior que zero
+    while (numero != 0) {
+        if (numero % 10 == 7) {
+            contador++;  // Incrementa o contador se o dígito for 7
+        }
+        numero /= 10;  // Remove o último dígito
+    }
+
+    printf("O numero tem %d algarismos 7.\n", contador);
+
+    return 0;
+}
