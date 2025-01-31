@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int A, B, i;
+
+    // Solicita ao usuário os valores de A e B
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+
+    // Verifica se A é maior que B ou B é maior que A, e ajusta o laço
+    if (A > B) {
+        // Troca os valores de A e B se A for maior que B
+        int temp = A;
+        A = B;
+        B = temp;
+    }
+
+    printf("Quadrados dos múltiplos de 4 entre %d e %d:\n", A, B);
+
+    // Loop de A até B
+    for (i = A; i <= B; i++) {
+        // Verifica se o número é múltiplo de 4
+        if (i % 4 == 0) {
+            // Imprime o quadrado do número
+            printf("%d^2 = %d\n", i, i * i);
+        }
+    }
+
+    return 0;
+}
